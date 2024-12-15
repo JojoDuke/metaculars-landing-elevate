@@ -70,12 +70,12 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`glass-card relative ${
+              className={`glass-card relative mt-6 ${
                 plan.popular ? "border-primary/30" : ""
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2">
                   <span className="bg-primary px-3 py-1 rounded-full text-sm font-medium">
                     Most Popular
                   </span>
