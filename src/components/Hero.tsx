@@ -27,6 +27,11 @@ const Hero = () => {
           >
             Revolutionize Customer Onboarding with AI
           </h1>
+          <h1
+            className="text-4xl md:text-6xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 leading-tight z-100"
+          >
+            Revolutionize Customer Onboarding with AI x3
+          </h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
