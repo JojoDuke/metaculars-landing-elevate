@@ -22,14 +22,11 @@ const Hero = () => {
             AI-Powered Customer Success
           </motion.span>
           
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+          <h1
             className="text-4xl md:text-6xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 leading-tight z-100"
           >
             Revolutionize Customer Onboarding with AI
-          </motion.h1>
+          </h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
