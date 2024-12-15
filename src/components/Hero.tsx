@@ -26,7 +26,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400"
+            className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 leading-tight"
           >
             Revolutionize Customer Onboarding with AI
           </motion.h1>
@@ -47,7 +47,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <button className="metallic-button">
-              Get Started Free
+              Start Converting Users
             </button>
             <button className="px-8 py-3 text-gray-300 hover:text-white transition-colors">
               Schedule a Demo →
