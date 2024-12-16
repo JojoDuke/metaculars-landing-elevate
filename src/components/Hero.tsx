@@ -23,7 +23,7 @@ const Hero = () => {
           </motion.span>
           
           <h1
-            className="font-montserrat text-4xl md:text-6xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 leading-tight z-100"
+            className="font-montserrat text-3xl md:text-5xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 leading-tight z-100"
           >
             Revolutionize Customer Onboarding with AI
           </h1>
