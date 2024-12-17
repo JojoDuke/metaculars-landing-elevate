@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import ContactDialog from "./ContactDialog";
 
 const Hero = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div className="grid-background" />
@@ -23,7 +27,7 @@ const Hero = () => {
           </motion.span>
           
           <h1
-            className="font-montserrat text-3xl md:text-5xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 leading-tight z-100"
+            className="text-3xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 leading-tight z-100"
           >
             Revolutionize Customer Onboarding with AI
           </h1>
@@ -46,7 +50,10 @@ const Hero = () => {
             <button className="metallic-button">
               Start Converting Users
             </button>
-            <button className="px-8 py-3 text-gray-300 hover:text-white transition-colors">
+            <button 
+              className="px-8 py-3 text-gray-300 hover:text-white transition-colors"
+              onClick={() => setIsDialogOpen(true)}
+            >
               Schedule a Demo →
             </button>
           </motion.div>
@@ -74,6 +81,8 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      <ContactDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </section>
   );
 };

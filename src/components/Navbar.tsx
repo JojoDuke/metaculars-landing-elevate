@@ -49,7 +49,7 @@ const Navbar = () => {
             >
               Pricing
             </a>
-            <button className="metallic-button">Get Started</button>
+            <button className="metallic-button">Start Converting Users</button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,7 +82,7 @@ const Navbar = () => {
             >
               Pricing
             </a>
-            <button className="metallic-button w-full">Get Started</button>
+            <button className="metallic-button w-full">Start Converting Users</button>
           </div>
         )}
       </div>

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { useState } from "react";
+import ContactDialog from "./ContactDialog";
 
 const plans = [
   {
@@ -44,6 +46,8 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <section id="pricing" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-6">
@@ -99,11 +103,18 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              <button className="metallic-button w-full">Get Started</button>
+              <button 
+                className="metallic-button w-full"
+                onClick={() => setIsDialogOpen(true)}
+              >
+                Contact Us
+              </button>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <ContactDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
     </section>
   );
 };
