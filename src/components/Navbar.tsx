@@ -13,80 +13,106 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Add class to body when mobile menu is open to prevent scrolling
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-secondary/80 backdrop-blur-lg" : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <img
-              src="/lovable-uploads/c7c62b04-09b6-4270-85c4-8e289582d580.png"
-              alt="Metaculars Logo"
-              className="h-8 w-auto"
-            />
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-secondary/80 backdrop-blur-lg" : "bg-transparent"
+        }`}
+      >
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <img
+                src="/lovable-uploads/c7c62b04-09b6-4270-85c4-8e289582d580.png"
+                alt="Metaculars Logo"
+                className="h-8 w-auto"
+              />
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a
+                href="#features"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                Features
+              </a>
+              <a
+                href="#solution"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                Solution
+              </a>
+              <a
+                href="#pricing"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                Pricing
+              </a>
+              <button className="metallic-button">Start Converting Users</button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a
-              href="#features"
-              className="text-sm text-gray-300 hover:text-white transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#solution"
-              className="text-sm text-gray-300 hover:text-white transition-colors"
-            >
-              Solution
-            </a>
-            <a
-              href="#pricing"
-              className="text-sm text-gray-300 hover:text-white transition-colors"
-            >
-              Pricing
-            </a>
-            <button className="metallic-button">Start Converting Users</button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden fixed inset-0 top-[72px] bg-secondary/95 backdrop-blur-lg z-50">
+              <div className="flex flex-col items-center justify-center h-full space-y-8">
+                <a
+                  href="#features"
+                  className="text-xl text-gray-300 hover:text-white transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Features
+                </a>
+                <a
+                  href="#solution"
+                  className="text-xl text-gray-300 hover:text-white transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Solution
+                </a>
+                <a
+                  href="#pricing"
+                  className="text-xl text-gray-300 hover:text-white transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Pricing
+                </a>
+                <button 
+                  className="metallic-button"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Start Converting Users
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
-            <a
-              href="#features"
-              className="block text-gray-300 hover:text-white transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#solution"
-              className="block text-gray-300 hover:text-white transition-colors"
-            >
-              Solution
-            </a>
-            <a
-              href="#pricing"
-              className="block text-gray-300 hover:text-white transition-colors"
-            >
-              Pricing
-            </a>
-            <button className="metallic-button w-full">Start Converting Users</button>
-          </div>
-        )}
-      </div>
-    </nav>
+      </nav>
+      {/* Add padding to the page content when mobile menu is open */}
+      <div className={`${isMobileMenuOpen ? 'pt-[72px]' : ''}`}></div>
+    </>
   );
 };
 
