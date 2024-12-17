@@ -13,7 +13,7 @@ const Pricing = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="glass-card max-w-3xl mx-auto text-center"
+          className="glass-card w-full text-center"
         >
           <h3 className="text-2xl font-bold mb-6">
             Ready to Transform Your Customer Experience?
