@@ -76,37 +76,45 @@ const Navbar = () => {
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="md:hidden fixed inset-0 top-[72px] bg-secondary/95 backdrop-blur-lg z-50">
-              <div className="flex flex-col items-center justify-center h-full space-y-8">
-                <a
-                  href="#features"
-                  className="text-xl text-gray-300 hover:text-white transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Features
-                </a>
-                <a
-                  href="#solution"
-                  className="text-xl text-gray-300 hover:text-white transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Solution
-                </a>
-                <a
-                  href="#pricing"
-                  className="text-xl text-gray-300 hover:text-white transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Pricing
-                </a>
-                <button 
-                  className="metallic-button"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Start Converting Users
-                </button>
+            <>
+              {/* Overlay */}
+              <div 
+                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+                onClick={() => setIsMobileMenuOpen(false)}
+              />
+              {/* Menu */}
+              <div className="md:hidden fixed inset-0 top-[72px] bg-secondary/95 backdrop-blur-lg z-50">
+                <div className="flex flex-col items-center justify-center h-full space-y-8">
+                  <a
+                    href="#features"
+                    className="text-xl text-gray-300 hover:text-white transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Features
+                  </a>
+                  <a
+                    href="#solution"
+                    className="text-xl text-gray-300 hover:text-white transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Solution
+                  </a>
+                  <a
+                    href="#pricing"
+                    className="text-xl text-gray-300 hover:text-white transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Pricing
+                  </a>
+                  <button 
+                    className="metallic-button"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Start Converting Users
+                  </button>
+                </div>
               </div>
-            </div>
+            </>
           )}
         </div>
       </nav>
