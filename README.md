@@ -1,6 +1,6 @@
 # Metaculars Landing Page
 
-A modern landing page for Metaculars, showcasing AI-powered customer experience solutions.
+Landing page for Metaculars, showcasing AI-powered customer experience solutions.
 
 ## Features
 - Responsive design
