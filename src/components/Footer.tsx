@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <img
-              src="/assets/placeholder.svg"
+              src="/lovable-uploads/a7ff0f5f-e8d4-4beb-b1df-fe8d4fc7f940.png"
               alt="Metaculars Logo"
-              className="h-8 w-auto mb-4"
+              className="h-10 w-auto mb-4"
             />
             <p className="text-gray-400 text-sm">
               Revolutionizing customer onboarding with AI-powered solutions.
