@@ -13,7 +13,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Add class to body when mobile menu is open to prevent scrolling
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -36,7 +35,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img
-                src="/assets/c7c62b04-09b6-4270-85c4-8e289582d580.png"
+                src="/assets/placeholder.svg"
                 alt="Metaculars Logo"
                 className="h-8 w-auto"
               />
