@@ -35,7 +35,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img
-                src="/lovable-uploads/a7ff0f5f-e8d4-4beb-b1df-fe8d4fc7f940.png"
+                src="/assets/logo.png"
                 alt="Metaculars Logo"
                 className="h-10 w-auto"
               />
